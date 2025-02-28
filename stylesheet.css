@@ -1,0 +1,247 @@
+@font-face {
+	font-family: 'Beaufort';
+	src: url(Fonts/beaufort-for-lol/BeaufortforLOL-Regular.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+	--background: #010A13;
+	--primary: #c99b3d;
+	--text-color: #A09B8C;
+	background: var(--background);
+	--font: 'Beaufort';
+}
+
+/* Remove global image sizing to prevent unintended stretching */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+header {
+	font-family: var(--font);
+	color: var(--primary);
+	font-size: 5rem;
+	text-align: center;
+	border-bottom: 2px solid var(--primary);
+	margin-bottom: 2rem;
+}
+
+p {
+	font-family: var(--font);
+	color: var(--text-color);
+}
+
+/* Help Icon Styles */
+.help-icon {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    width: 70px;
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Popup Styles */
+.help-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(16, 24, 36, 0.9);
+    padding: 20px;
+    border: 2px solid #C8AA6E;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 300px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* Hide Popup */
+.help-popup.hidden {
+    display: none;
+}
+
+/* Container for the side-by-side layout */
+.image-description-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* Space between image and description */
+    padding: 20px;
+    max-width: 90%;
+    margin: 40px auto; /* Center the container */
+}
+
+/* Description Box Styling (Left Side) */
+.description-box {
+    flex: 1;
+    max-width: 600px;
+    background-color: rgba(16, 24, 36, 0.9);
+    color: var(--text-color);
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    font-family: var(--font);
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-height: 200px; /* Ensures consistent height with image */
+}
+
+/* Image Container Styling (Right Side) */
+.image-container {
+    flex: 1;
+    max-width: 400px; /* Prevents the image from getting too large */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure both image and description remain visible when aligned */
+.hidden {
+    display: none;
+}
+
+
+.description-box p {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: center;
+}
+/* Add a hover effect */
+.description-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Center text and ensure readability */
+.description-box p {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+
+
+/* Close Button */
+.close-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #bbb;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+    background-color: #1E2328;
+}
+
+.champion-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 champions per row */
+    grid-template-rows: repeat(2, auto); /* Force two rows */
+    row-gap: 20px; /* Keep vertical gap as needed */
+    justify-items: center;
+}
+
+
+
+/* Champion Card Styles */
+.champion-card {
+    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #1E2328;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.champion-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--primary);
+}
+
+.champion-card p {
+    font-family: 'Beaufort';
+    color: #A09B8C;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.champion-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Centered Input and Button Container */
+.input-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    margin: 20px auto; /* Center the container itself */
+}
+
+/* Date Input Styling */
+input[type="date"] {
+    font-family: var(--font);
+    color: var(--text-color);
+    background-color: #1E2328;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    padding: 8px 12px;
+    outline: none;
+    transition: border-color 0.3s;
+    min-width: 200px;
+}
+
+input[type="date"]::placeholder {
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+input[type="date"]:focus {
+    border-color: var(--primary);
+}
+
+/* Button Styling */
+button {
+    font-family: var(--font);
+    color: white;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
