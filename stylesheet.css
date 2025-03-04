@@ -245,3 +245,12 @@ button:active {
     transform: translateY(0);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.result {
+    text-align: center;
+    width: 100%;
+    font-size: 1.5rem; /* Adjust size if needed */
+    font-family: var(--font);
+    color: var(--text-color);
+    margin-top: 10px;
+}
